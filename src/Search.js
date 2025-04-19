@@ -15,10 +15,8 @@ function Search() {
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNmYzOTcwNGJhOTEwMjlkM2NhZDY3MzQwY2E2ODYwMCIsInN1YiI6IjY2MzZhNzk0OTU5MGUzMDEyM2JjNDlhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ImAuflKe7r_PCIM-jUc8wa9hCTYlwFWQqhQaIXgKVhI'
         }
       };
-    useEffect(() => {
-        const handleKeyPress = (event) => {
-          if (event.key === 'Enter') {
-            const fetchData = async () => {
+
+    const fetchData = async () => {
                 try {
                   const response = await fetch(`https://api.themoviedb.org/3/search/tv?query=${query}`,options);
                   if (!response.ok) {
@@ -35,7 +33,10 @@ function Search() {
                   console.log(error)
                 }
               };
-          
+    
+    useEffect(() => {
+        const handleKeyPress = (event) => {
+          if (event.key === 'Enter') {
               fetchData();
           }
         };
