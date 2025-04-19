@@ -111,7 +111,6 @@ src={(src==='https://multiembed.mov/?video_id=')?`${src}${tvseriesid}&tmdb=1&s=$
 referrerPolicy="origin"
             allowFullScreen
             height="550"
-            title="Video Player"
             scrolling="no"
             className="max-w-3xl mx-auto px-4 pt-10"
             style={{border:'none',outline:'none',width:'90%',marginBottom:'50px'}}
