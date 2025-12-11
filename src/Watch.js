@@ -6,6 +6,7 @@ function Watch() {
     const [data, setData] = useState(null);
     const [episode,setEpisode] = useState(1)
     const [season,setSeason] = useState(1)
+    
     const [src,setSrc] = useState(`https://vidsrc.icu/embed/tv/`)
     const [numberOfEpisodes,setNumberOfEpisodes] = useState(null)
     const [elements, setElements] = useState([]);
@@ -100,10 +101,10 @@ function Watch() {
         <label style={{color:'white',marginLeft:'5px'}} for='episode'>Episode :  </label><select id="episode" onChange={handleChange2} value={episode}>{elements}</select>
     </div>
     <div id="servers">
-        <span onClick={()=>{setSrc(`https://vidsrc.icu/embed/tv/`)}} style={{cursor:'pointer',color:'rgb(120,120,120)',fontWeight:'bold',marginRight:'20px'}}>VidSrc</span>
-        <span onClick={()=>{setSrc(`https://vidsrc.pro/embed/tv/`)}} style={{cursor:'pointer',color:'rgb(120,120,120)',fontWeight:'bold',marginRight:'20px'}}>Vid.pro</span>
-        <span onClick={()=>{setSrc(`https://vidsrc.in/embed/tv/`)}} style={{cursor:'pointer',color:'rgb(120,120,120)',fontWeight:'bold',marginRight:'20px'}}>Vid.in</span>
-        <span onClick={()=>{setSrc(`https://multiembed.mov/?video_id=`)}} style={{cursor:'pointer',color:'rgb(120,120,120)',fontWeight:'bold'}}>SuberEmbed</span>
+        <span onClick={()=>{setSrc(`https://vidsrc.icu/embed/tv/`)}} style={{backgroundColor:src===`https://vidsrc.icu/embed/tv/`?'#000':"unset",cursor:'pointer',color:'rgb(120,120,120)',fontWeight:'bold',marginRight:'20px'}}>VidSrc</span>
+        <span onClick={()=>{setSrc(`https://vidsrc.pro/embed/tv/`)}} style={{backgroundColor:src===`https://vidsrc.pro/embed/tv/`?'#000':"unset",cursor:'pointer',color:'rgb(120,120,120)',fontWeight:'bold',marginRight:'20px'}}>Vid.pro</span>
+        <span onClick={()=>{setSrc(`https://vidsrc.in/embed/tv/`)}} style={{backgroundColor:src===`https://vidsrc.in/embed/tv/`?'#000':"unset",cursor:'pointer',color:'rgb(120,120,120)',fontWeight:'bold',marginRight:'20px'}}>Vid.in</span>
+        <span onClick={()=>{setSrc(`https://multiembed.mov/?video_id=`)}} style={{backgroundColor:src===`https://multiembed.mov/?video_id=`?'#000':"unset",cursor:'pointer',color:'rgb(120,120,120)',fontWeight:'bold'}}>SuberEmbed</span>
     </div>
     <div style={{textAlign:'center'}}>
     <iframe
